@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="user-details-container colorful-bg">
+    <div class="user-details-box tilt-effect">
+        <div class="user-details-header">
+            <h1 class="user-details-title">Your Shopping Identity</h1>
+            <p class="user-details-subtitle">"Your shopping journey, your way!"</p>
+        </div>
+        
+        <div class="user-details-quote-box">
+            <p class="user-details-quote">"A smart shopper knows the value of every penny saved"</p>
+            <div class="details-decoration"></div>
+        </div>
+        
+        <div class="details-grid">
+            <div class="detail-item hover-grow">
+                <div class="detail-icon">
+                    <i class="fas fa-user-tag"></i>
+                </div>
+                <div class="detail-content">
+                    <span class="detail-label">Username:</span>
+                    <span class="detail-value username-gradient">{{ username }}</span>
+                </div>
+            </div>
+            
+            <div class="detail-item hover-grow">
+                <div class="detail-icon">
+                    <i class="fas fa-key"></i>
+                </div>
+                <div class="detail-content">
+                    <span class="detail-label">Password:</span>
+                    <span class="detail-value password-gradient">••••••••</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="user-details-buttons">
+            <a href="{{ url_for('profile') }}" class="btn btn-gradient">
+                <i class="fas fa-arrow-left"></i> Back to Profile
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}

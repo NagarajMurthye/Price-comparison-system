@@ -1,2 +1,14 @@
-# Price-comparison-system
-compares the prices between Amazon and Snapdeal with amazing user interfaces and designs.
+price_comparison/
+├── app.py
+├── templates/
+│   ├── base.html
+│   ├── login.html
+│   ├── search_history.html
+│   ├── register.html
+│   ├── welcome.html
+│   ├── search.html
+│   └── user_details.html
+│   ├── results.html
+│   └── profile.html      
+├── static/
+│   ├── style.css

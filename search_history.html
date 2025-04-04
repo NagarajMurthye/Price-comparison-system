@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="history-container">
+    <div class="history-box glass-effect">
+        <div class="history-header">
+            <h1 class="history-title">Your Search Journey</h1>
+            <p class="history-subtitle">Every search tells a story of deals discovered!</p>
+        </div>
+        
+        <div class="history-quote-box">
+            <p class="history-quote">"Your shopping history is a map of your desires, a diary of your impulses, and a window into your soul—guard it wisely.😊"</p>
+            <div class="timeline-decoration"></div>
+        </div>
+        
+        {% if history %}
+        <div class="history-list">
+            {% for item in history %}
+            <div class="history-item hover-grow">
+                <div class="history-item-content">
+                    <span class="history-query">{{ item['search_query'] }}</span>
+                    <span class="history-time">{{ item['search_time'] }}</span>
+                </div>
+                <div class="history-icon">
+                    <i class="fas fa-search"></i>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% else %}
+        <div class="history-empty">
+            <i class="fas fa-search-minus"></i>
+            <p>Your search history is empty. Start searching to fill it up!</p>
+        </div>
+        {% endif %}
+        
+        <div class="history-buttons">
+            <form method="POST" action="{{ url_for('clear_history') }}" class="hover-tilt">
+                <button type="submit" class="btn btn-gradient btn-bounce">
+                    <i class="fas fa-trash-alt"></i> Clear History
+                </button>
+            </form>
+            <a href="{{ url_for('profile') }}" class="btn btn-gradient btn-bounce">
+                <i class="fas fa-arrow-left"></i> Back to Profile
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}

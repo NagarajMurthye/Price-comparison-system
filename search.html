@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="search-container gradient-bg">
+    <div class="search-box glass-effect tilt-effect">
+        <h1 class="search-title">Compare Prices Like a Pro</h1>
+        <p class="search-subtitle">Find the best deals across multiple stores</p>
+        
+        <form method="POST" class="search-form">
+            <div class="form-group floating-input">
+                <input type="text" name="product" placeholder=" " required class="search-input">
+                <label>Search for a product...</label>
+                <div class="underline"></div>
+            </div>
+            <button type="submit" class="btn btn-gradient btn-bounce btn-pulse">
+                <i class="fas fa-search"></i> Search Now
+            </button>
+        </form>
+    </div>
+    
+    <div class="search-decoration">
+        <div class="deco-circle circle-1"></div>
+        <div class="deco-circle circle-2"></div>
+        <div class="deco-circle circle-3"></div>
+    </div>
+</div>
+{% endblock %}

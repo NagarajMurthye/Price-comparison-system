@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="header-buttons">
+    <a href="{{ url_for('profile') }}" class="btn btn-gradient btn-profile">
+        <i class="fas fa-user"></i> Profile
+    </a>    
+</div>
+    
+    <div class="comparison-grid">
+        <div class="platform-section">
+            <h2 class="platform-title amazon">Amazon</h2>
+            {% for item in amazon_data %}
+            <div class="product-card">
+                {% if item.image_url %}
+                <img src="{{ item.image_url }}" alt="{{ item.title }}" class="product-image">
+                {% endif %}
+                <h3 class="product-title">{{ item.title }}</h3>
+                <p class="product-price">{{ item.price }}</p>
+                {% if item.link %}
+                <a href="{{ item.link }}" target="_blank" class="btn btn-gradient btn-small">View Product</a>
+                {% endif %}
+            </div>
+            {% endfor %}
+        </div>
+        
+        <div class="platform-section">
+            <h2 class="platform-title snapdeal">Snapdeal</h2>
+            {% for item in snapdeal_data %}
+            <div class="product-card">
+                {% if item.image_url %}
+                <img src="{{ item.image_url }}" alt="{{ item.title }}" class="product-image">
+                {% endif %}
+                <h3 class="product-title">{{ item.title }}</h3>
+                <p class="product-price">{{ item.price }}</p>
+                {% if item.link %}
+                <a href="{{ item.link }}" target="_blank" class="btn btn-gradient btn-small">View Product</a>
+                {% endif %}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    
+    <div class="search-again">
+        <a href="{{ url_for('search') }}" class="btn btn-gradient">Search for more products</a>
+    </div>
+</div>
+{% endblock %}

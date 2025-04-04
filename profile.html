@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="profile-container colorful-bg">
+    <div class="profile-box tilt-effect">
+        <div class="profile-header">
+            <h1 class="profile-title">Your Shopping Haven</h1>
+            <p class="profile-subtitle">"Shop like nobody's watching - your deals await!"</p>
+        </div>
+        
+        <div class="profile-quote-box">
+            <p class="profile-quote">"Every purchase is a story, every deal a victory. Welcome to your shopping sanctuary!"</p>
+            <div class="quote-decoration"></div>
+        </div>
+        
+        <div class="profile-buttons">
+            <a href="{{ url_for('results') }}" class="btn btn-gradient btn-home btn-bounce">
+                <i class="fas fa-home"></i> Back to Home
+            </a>
+            <a href="{{ url_for('search_history') }}" class="btn btn-gradient btn-history btn-bounce">
+                <i class="fas fa-history"></i> Search History
+            </a>
+            <a href="{{ url_for('user_details') }}" class="btn btn-gradient btn-details">
+                <i class="fas fa-user-circle"></i> User Details
+            </a>
+            <a href="{{ url_for('logout') }}" class="btn btn-gradient btn-logout">
+                <i class="fas fa-sign-out-alt"></i> Logout
+            </a>
+        </div>
+        
+        <div class="profile-footer">
+            <div class="shopping-icon">
+                <i class="fas fa-shopping-bag"></i>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
